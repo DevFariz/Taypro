@@ -1,13 +1,33 @@
-body {
+@import-normalize; /* bring in normalize.css styles */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@font-face {
+  font-family: "GolosBold";
+  src: local("GolosBold"),
+    url("./assets/fonts/Golos-UI_Bold.ttf") format("truetype");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Golos";
+  src: local("Golos"),
+    url("./assets/fonts/Golos-UI_Regular.ttf") format("truetype");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "GolosMedium";
+  src: local("GolosMedium"),
+    url("./assets/fonts/Golos-UI_Medium.ttf") format("truetype");
+  font-weight: 500;
+}
+
+* {
+  font-family: "Golos";
 }
