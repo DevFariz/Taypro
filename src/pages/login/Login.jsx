@@ -1,14 +1,13 @@
 import styled from "styled-components";
 
-import { Popup } from "../../components/popup/Popup";
-import { Button } from "../../components/Button";
 import { Title } from "../../components/Title";
+import { Button } from "../../components/Button";
+import { Popup } from "../../components/popup/Popup";
 import { Wrapper } from "../../components/popup/Wrapper";
 import Input from "../../components/inputs/Input";
 import InputPassword from "../../components/inputs/InputPassword";
 
 import { FcGoogle } from "react-icons/fc";
-
 
 const LoginGoogle = styled.button`
   display: flex;
@@ -38,23 +37,18 @@ const Text = styled.p`
   margin-bottom: 24px;
 `;
 
-const PolicyText = styled.div`
-  font-size: 12px;
-  line-height: 150%;
-  font-weight: 700;
-  letter-spacing: 0.3px;
-  color: rgba(0, 0, 0, 0.87);
+const BtnsContainer = styled.div`
+  display: flex;
+  align-items: center;
 `;
 
-const PolicyLink = styled.a.attrs({
-  href: "/12",
+const ForgotPassBtn = styled.a.attrs({
+  href: "/forgot-pass",
 })`
-  font-size: 12px;
-  line-height: 150%;
-  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: rgba(0, 0, 0, 0.54);
   text-decoration: none;
-  letter-spacing: 0.3px;
-  color: #9a9c9c;
 
   &:hover {
     text-decoration: underline;
@@ -72,38 +66,32 @@ const LoginLink = styled.a.attrs({ href: "/login" })`
   }
 `;
 
-const SignUp = () => {
+const Login = () => {
   return (
     <Wrapper>
       <Popup style={{ marginBottom: 16 }}>
-        <Title>Регистрация компании</Title>
+        <Title>Авторизация</Title>
         <LoginGoogle>
-          <span style={{ marginRight: 8 }}>Зарегистрироваться с помощью</span>
+          <span style={{ marginRight: 8 }}>Войти с помощью</span>
           <FcGoogle size={16} />
         </LoginGoogle>
-        <Text>Или с помощью формы</Text>
-        <Input
-          labelText="Название"
-          placeholder="Введите название компании"
-          type="text"
-        />
+        <Text>Или с помощью почты и пароля</Text>
         <Input labelText="E-mail" placeholder="Введите E-mail" type="email" />
         <InputPassword
           labelText="Пароль"
           placeholder="Введите пароль"
           type="password"
         />
-        <Button style={{ marginBottom: 16 }}>Зарегистрироваться</Button>
-        <PolicyText>
-          Нажимая на кнопку, вы соглашаетесь с{" "}
-          <PolicyLink>Политикой обработки персональных данных</PolicyLink>
-        </PolicyText>
+        <BtnsContainer>
+          <Button style={{ marginRight: 28 }}>Войти</Button>
+          <ForgotPassBtn>Забыли пароль?</ForgotPassBtn>
+        </BtnsContainer>
       </Popup>
       <Text>
-        Уже есть аккаунт? <LoginLink>Войти</LoginLink>
+        У вас нет аккаунта? <LoginLink>Зарегистрироваться</LoginLink>
       </Text>
     </Wrapper>
   );
 };
 
-export default SignUp;
+export default Login;
