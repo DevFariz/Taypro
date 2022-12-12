@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
-export const Button = styled.button`
+export const Button = styled.button.attrs(({disabled}) => ({
+  disabled: disabled
+}))`
   font-weight: 400;
   font-size: 14px;
   line-height: 18px;
@@ -14,4 +16,5 @@ export const Button = styled.button`
   &:hover{
     background: #15a481;
   }
+  opacity: ${props => props.disabled ? 0.4 : 1};
 `

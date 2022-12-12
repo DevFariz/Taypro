@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 import { Title } from "../../components/Title";
@@ -55,13 +56,13 @@ const ForgotPassBtn = styled.a.attrs({
   }
 `;
 
-const LoginLink = styled.a.attrs({ href: "/login" })`
+const LoginLink = styled(Link).attrs({ to: "/signup" })`
   text-decoration: none;
   font-size: 14px;
   line-height: 18px;
   color: #14b890;
 
-  &:hover{
+  &:hover {
     text-decoration: underline;
   }
 `;
@@ -70,22 +71,24 @@ const Login = () => {
   return (
     <Wrapper>
       <Popup style={{ marginBottom: 16 }}>
-        <Title>Авторизация</Title>
-        <LoginGoogle>
-          <span style={{ marginRight: 8 }}>Войти с помощью</span>
-          <FcGoogle size={16} />
-        </LoginGoogle>
-        <Text>Или с помощью почты и пароля</Text>
-        <Input labelText="E-mail" placeholder="Введите E-mail" type="email" />
-        <InputPassword
-          labelText="Пароль"
-          placeholder="Введите пароль"
-          type="password"
-        />
-        <BtnsContainer>
-          <Button style={{ marginRight: 28 }}>Войти</Button>
-          <ForgotPassBtn>Забыли пароль?</ForgotPassBtn>
-        </BtnsContainer>
+        <form>
+          <Title>Авторизация</Title>
+          <LoginGoogle>
+            <span style={{ marginRight: 8 }}>Войти с помощью</span>
+            <FcGoogle size={16} />
+          </LoginGoogle>
+          <Text>Или с помощью почты и пароля</Text>
+          <Input labelText="E-mail" placeholder="Введите E-mail" type="email" />
+          <InputPassword
+            labelText="Пароль"
+            placeholder="Введите пароль"
+            type="password"
+          />
+          <BtnsContainer>
+            <Button style={{ marginRight: 28 }}>Войти</Button>
+            <ForgotPassBtn>Забыли пароль?</ForgotPassBtn>
+          </BtnsContainer>
+        </form>
       </Popup>
       <Text>
         У вас нет аккаунта? <LoginLink>Зарегистрироваться</LoginLink>

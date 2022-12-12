@@ -30,14 +30,19 @@ const Label = styled.label`
   margin-bottom: 5px;
 `;
 
-const InputPassword = ({ labelText, placeholder, type }) => {
+const InputPassword = ({ labelText, placeholder, type, value, onChange }) => {
   const [passwordShown, setPasswordShown] = useState(false);
 
   return (
     <>
       <Label>{labelText}</Label>
       <InputContainer>
-        <InputEl placeholder={placeholder} type={passwordShown ? 'text' : type} />
+        <InputEl
+          placeholder={placeholder}
+          type={passwordShown ? "text" : type}
+          value={value}
+          onChange={(e) => onChange(e.target.value)}
+        />
         <svg
           onClick={() => setPasswordShown(!passwordShown)}
           style={{

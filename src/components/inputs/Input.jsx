@@ -25,11 +25,11 @@ const Label = styled.label`
   margin-bottom: 5px;
 `;
 
-const Input = ({labelText, placeholder, type}) => {
+const Input = ({labelText, placeholder, type, value, onChange}) => {
   return (
     <>
       <Label>{labelText}</Label>
-      <InputEl placeholder={placeholder} type={type}/>
+      <InputEl value={value} onChange={(e) => onChange(e.target.value)} placeholder={placeholder} type={type}/>
     </>
   );
 };
